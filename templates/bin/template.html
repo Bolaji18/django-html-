@@ -1,0 +1,16 @@
+{% if greeting >= 1 %}
+<h1>Hello {{ firstname }}</h1>
+{% else %}
+<h1>Bye {{ firstname }}</h1>
+{% endif %}
+
+{% for x in fruits %}
+<h1>{{ x }}</h1>
+{% endfor %}
+
+{% for x in cars %}
+<h1>{{ x.brand }}</h1>
+<p>{{ x.model }}</p>
+<p>{{ x.year }}</p>
+
+{% endfor %}

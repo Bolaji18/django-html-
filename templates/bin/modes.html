@@ -1,0 +1,27 @@
+  {% now "y-m-d G:i:s"%}
+<ul>
+  {% for x in mymembers %}
+    <li>{{ x.firstname}}</li>
+
+   {% endfor %}
+</ul>
+
+{% if x is y %}
+  <h1>YES</h1>
+  {% else %}
+  <h1>NO</h1>
+  {% endif %}
+
+  {% with var1=y  var2=x %}
+  {% if var1 == var2 %}
+    <h1>YES</h1>
+    {% else %}
+    <h1>NO</h1>
+    {% endif %}
+    {% endwith %}
+
+    {% if x is not y %}
+      <h1>YES</h1>
+      {% else %}
+      <h1>NO</h1>
+      {% endif %}

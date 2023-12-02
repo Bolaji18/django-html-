@@ -1,0 +1,43 @@
+body{
+  background-image: url("stars.jpg");
+  background-position:100% fixed;
+  background-repeat: no-repeat;
+  background-size: 100% ;
+
+}
+
+ul{
+  position: relative;
+  margin-top: 300px;
+  margin-left: 500px;
+  list-style: none;
+}
+ul li{
+  font-style: normal;
+  font-weight: 25px;
+  padding-top: 20px;
+  font-size: 25px;
+
+}
+ul li input{
+  border-top: 0px;
+  background-color: inherit;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 3px #333 solid;
+  padding-left: 20px;
+}
+ul li button{
+  height: 40px;
+  width: 80px;
+  background-color: inherit;
+  border: 2px #333 solid;
+  border-radius: 7px;
+  font-size: 20px;
+  padding: 10px;
+
+
+}
+ul li input:hover{
+  background-position: center;
+}

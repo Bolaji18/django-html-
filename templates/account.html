@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- Website template by freewebsitetemplates.com -->
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>Cruise Vacation</title>
+		<link rel="stylesheet" href='{% static "style.css" %}' />
+		<style>
+			label {
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+  color: #333;
+}
+input[type="number"],
+input[type="email"],
+input[type="text"],
+input[type="password"] {
+  padding: 10px;
+  width: 90%;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="submit"],
+ #submit{
+  background-color: #008CBA;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#submit:hover {
+  background-color: #006F8E;
+}
+
+
+		</style>
+	</head>
+	<body>
+		<div class="header">
+			<ul id="navigation">
+				<li>
+					<a href="index.html" id="home">Home</a>
+				</li>
+				<li>
+					<a href="#" id="email">Email</a>
+				</li>
+			</ul>
+
+			<a href="index.html" id="logo"><img src="{% static 'logo.jpg' %}" alt="logo"/></a>
+			<ul class="navigation">
+				<li class="first">
+					<a href="destinations.html">Cruises &amp; Destinations</a>
+				</li>
+				<li>
+					<a href="ships.html">Ships &amp; Activities</a>
+				</li>
+				<li class="selected">
+					<a href="cruises.html">Prepare for your Cruises</a>
+				</li>
+			</ul>
+
+		</div>
+
+		<div class="content">
+			<div id="blog">
+				<h2>Login</h2>
+				 	{% if error_message %}
+               <p>{{ error_message }}</p>
+			    {% endif %}
+				 <form method="POST">
+
+				     {%csrf_token %}
+
+
+					 {{ login_form}}
+					  <input type="submit" value="Login">
+
+				 </form>
+
+
+
+			</div>
+		</div>
+		<div id="footer">
+			<div>
+				<ul>
+					<li><a href="about.html">The Company</a></li>
+					<li><a href="blog.html">Visit our Blog</a></li>
+					<li><a href="#">Brochure download</a></li>
+				</ul>
+				<ul>
+					<li><a href="destinations.html">Cruises &amp; Destinations</a></li>
+					<li><a href="ships.html">Ships &amp; Activities</a></li>
+					<li><a href="cruises.html">Prepare for your Cruises</a></li>
+				</ul>
+				<ul>
+					<li><a href="featured.html">Featured Destination</a></li>
+					<li><a href="deals.html">Hot Deals</a></li>
+					<li><a href="offers.html">Special Offers</a></li>
+				</ul>
+				<form action="">
+					<span>Always Get Updated for</span>
+					<h2>Hot Deals &amp; Special Offers</h2>
+					<input type="text" value="Enter email address" id="email" onblur="this.value=!this.value?'Enter email address':this.value;" onfocus="this.select()" onclick="this.value='';" />
+					<input type="submit" id="submit" value=""/>
+				</form>
+				<p>&#169; Copyright 2012. All Rights Reserved.</p>
+			</div>
+		</div>
+	</body>
+</h

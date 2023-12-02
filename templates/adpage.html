@@ -1,0 +1,393 @@
+{% load static %}
+
+<!DOCTYPE html>
+<!-- Website template by freewebsitetemplates.com -->
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>Cruise Vacation</title>
+		<link rel="stylesheet" href='{% static "style.css" %}' />
+		<style>
+
+
+:root{
+   font-family: "Raleway", sans-serif;
+   font-size: 16px;
+   font-weight: 400;
+}
+
+*{
+   margin: 0;
+   box-sizing: border-box;
+}
+
+/* carousel */
+.carousel{
+   position: relative;
+   width: 500px;
+   margin-left: 50%;
+   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+   margin-left: 0%;
+   margin-bottom: 200px;
+   height: 300px;
+}
+
+.carousel_inner{
+   width: 500px;
+   overflow: hidden;
+}
+
+.carousel_inner::after{
+   content: "";
+   display: block;
+   clear: both;
+}
+
+.carousel_item{
+   position:static;
+   display: none;
+   width: 500px;
+
+}
+
+/* slide effect */
+.carousel_item__active,
+.carousel_item__pos_prev,
+.carousel_item__pos_next{
+   display: block;
+}
+
+.carousel_item__pos_prev{
+   left: -100%;
+}
+
+.carousel_item__pos_next{
+   left: 100%;
+}
+
+.carousel_item__prev{
+   transform: translateX(100%);
+   transition: transform .5s ease-in-out;
+}
+
+.carousel_item__next{
+   transform: translateX(-100%);
+   transition: transform .5s ease-in-out;
+}
+
+/* fade effect */
+.carousel__fade .carousel_item__pos_prev,
+.carousel__fade .carousel_item__pos_next{
+   left: 0;
+   opacity: 0;
+}
+
+.carousel__fade .carousel_item__prev,
+.carousel__fade .carousel_item__next{
+   transform: none;
+   opacity: 1;
+   transition: opacity .5s ease-in-out;
+}
+
+.carousel__fade .carousel_item__active.carousel_item__prev,
+.carousel__fade .carousel_item__active.carousel_item__next{
+   opacity: 0;
+}
+
+/* carousel */
+.carousel_img{
+   display: block;
+   width: 500px;
+   margin-left:;
+  border-radius: 10px;
+  border: 2px solid #6d5e5e;
+}
+
+
+.carousel_title{
+   font-family: "Montserrat", sans-serif;
+   font-weight: 600;
+}
+
+.carousel_description{
+   margin-top: .75rem;
+   line-height: 150%;
+}
+
+.carousel_indicator{
+   position: absolute;
+   bottom: 1rem;
+   left: px;
+   transform: translateX(200%);
+   display: flex;
+   flex-direction: row;
+   padding-top: 19px;
+   gap: 2rem;
+   z-index: 1;
+   height: 15px;
+   width: 20px;
+   margin-left: 100px;
+}
+
+.carousel_dot{
+   display: block;
+   padding: .25rem;
+   background-color: rgba(12, 7, 7, 0.25);
+   border: none;
+   border-radius: 100%;
+   cursor: pointer;
+   transition: background-color .5s ease-in-out;
+}
+
+.carousel_dot__active{
+   background-color: rgb(250, 4, 4);
+   cursor: default;
+   pointer-events: none;
+}
+
+.carousel_control{
+   position: absolute;
+   top: 0;
+   left: 0;
+   display:none;
+   flex-direction: row;
+   justify-content: space-between;
+   width: 500px;
+   color: #fc0606;
+   height: 100%;
+}
+
+.carousel_button{
+   display: block;
+   padding-inline: 1rem;
+   font-family: "Raleway", sans-serif;
+   font-size: 1.375rem;
+   background-color: transparent;
+   color:#fc0606;
+   font-size: 50px;
+   margin-left: 100px;
+   margin-top: 250px;
+   border: none;
+   cursor: pointer;
+   transition: color .25s;
+   z-index: 1;
+}
+
+.carousel_button:hover{
+   color: rgba(135, 206, 250, .75);
+}
+		</style>
+
+
+
+
+
+	</head>
+
+
+
+	<body>
+		<div class="header">
+			<ul id="navigation">
+				<li>
+					<a href="index.html" id="home">Home</a>
+				</li>
+				<li>
+					<a href="#" id="email">Email</a>
+				</li>
+			</ul>
+			<p>Talk to a travel professional <span>1-999-666-888</span></p>
+			<a href="index.html" id="logo"><img src="images/logo.jpg" alt="logo"/></a>
+			<ul class="navigation">
+				<li class="first">
+					<a href="destinations.html">Cruises &amp; Destinations</a>
+				</li>
+				<li>
+					<a href="ships.html">Ships &amp; Activities</a>
+				</li>
+				<li class="selected">
+					<a href="cruises.html"></a>
+				</li>
+			</ul>
+		</div>
+		<div class="content">
+			<div id="cruises">
+				<h2></h2>
+				<div>
+					 <div class="carousel">
+      <div class="carousel_inner">
+         <div class="carousel_item carousel_item__active">
+            <img src="{{Users.image1.url}}" alt="" class="carousel_img">
+
+         </div>
+         <div class="carousel_item">
+            <img src="{{Users.image2.url}}" alt="" class="carousel_img">
+         </div>
+         <div class="carousel_item">
+            <img src="{{Users.image3.url}}" alt="" class="carousel_img">
+         </div>
+      </div>
+
+      <div class="carousel_indicator">
+         <button class="carousel_dot carousel_dot__active"></button>
+         <button class="carousel_dot"></button>
+         <button class="carousel_dot"></button>
+      </div>
+
+      <div class="carousel_control">
+         <button class="carousel_button carousel_button__prev">
+            <i class="fas fa-chevron-left"><</i>
+         </button>
+         <button class="carousel_button carousel_button__next">
+            <i class="fas fa-chevron-right">></i>
+         </button>
+      </div>
+   </div>
+
+			
+      <div class="list">
+         <ul>
+            <ol><h3><p><h3>Title: {{Users.title}}</h3></p></h3></ol>
+            
+            <ol><p>Description: {{Users.content}}.</p></ol>
+         
+         
+            <ol>
+               <p>address: {{Users.address}}</p>
+            </ol>
+            <ol>
+               <p>Price: {{Users.price}}</p>
+            </ol>
+            <ol>
+              <p> <button>BOOK</button> </p>
+            </ol>
+
+   </ul>
+
+      </div>
+
+      
+		<div id="footer">
+			<div>
+				<ul>
+					<li><a href="about.html">The Company</a></li>
+					<li><a href="blog.html">Visit our Blog</a></li>
+					<li><a href="#">Brochure download</a></li>
+				</ul>
+				<ul>
+					<li><a href="destinations.html">Cruises &amp; Destinations</a></li>
+					<li><a href="ships.html">Ships &amp; Activities</a></li>
+					<li><a href="cruises.html">Prepare for your Cruises</a></li>
+				</ul>
+				<ul>
+					<li><a href="featured.html">Featured Destination</a></li>
+					<li><a href="deals.html">Hot Deals</a></li>
+					<li><a href="offers.html">Special Offers</a></li>
+				</ul>
+				<form action="">
+					<span>Always Get Updated for</span>
+					<h2>Hot Deals &amp; Special Offers</h2>
+					<input type="text" value="Enter email address" id="email" onblur="this.value=!this.value?'Enter email address':this.value;" onfocus="this.select()" onclick="this.value='';" />
+					<input type="submit" id="submit" value=""/>
+				</form>
+				<p>&#169; Copyright 2012. All Rights Reserved.</p>
+			</div>
+		</div>
+
+
+
+
+	  <script>
+
+let onSlide = false;
+
+window.addEventListener("load", () => {
+   autoSlide();
+
+   const dots = document.querySelectorAll(".carousel_dot");
+   for (let i = 0; i < dots.length; i++) {
+      dots[i].addEventListener("click", () => slide(i));
+   }
+
+   const buttonPrev = document.querySelector(".carousel_button__prev");
+   const buttonNext = document.querySelector(".carousel_button__next");
+   buttonPrev.addEventListener("click", () => slide(getItemActiveIndex() - 1));
+   buttonNext.addEventListener("click", () => slide(getItemActiveIndex() + 1));
+})
+
+function autoSlide() {
+   setInterval(() => {
+      slide(getItemActiveIndex() + 1);
+   }, 3000000); // slide speed = 3s
+}
+
+function slide(toIndex) {
+   if (onSlide)
+      return;
+   onSlide = true;
+
+   const itemsArray = Array.from(document.querySelectorAll(".carousel_item"));
+   const itemActive = document.querySelector(".carousel_item__active");
+   const itemActiveIndex = itemsArray.indexOf(itemActive);
+   let newItemActive = null;
+
+   if (toIndex > itemActiveIndex) {
+      // check if toIndex exceeds the number of carousel items
+      if (toIndex >= itemsArray.length) {
+         toIndex = 0;
+      }
+
+      newItemActive = itemsArray[toIndex];
+
+      // start transition
+      newItemActive.classList.add("carousel_item__pos_next");
+      setTimeout(() => {
+         newItemActive.classList.add("carousel_item__next");
+         itemActive.classList.add("carousel_item__next");
+      }, 20);
+   } else {
+      // check if toIndex exceeds the number of carousel items
+      if (toIndex < 0) {
+         toIndex = itemsArray.length - 1;
+      }
+
+      newItemActive = itemsArray[toIndex];
+
+      // start transition
+      newItemActive.classList.add("carousel_item__pos_prev");
+      setTimeout(() => {
+         newItemActive.classList.add("carousel_item__prev");
+         itemActive.classList.add("carousel_item__prev");
+      }, 20);
+   }
+
+   // remove all transition class and switch active class
+   newItemActive.addEventListener("transitionend", () => {
+      itemActive.className = "carousel_item";
+      newItemActive.className = "carousel_item carousel_item__active";
+      onSlide = false;
+   }, {
+      once: true
+   });
+
+   slideIndicator(toIndex);
+}
+
+function getItemActiveIndex() {
+   const itemsArray = Array.from(document.querySelectorAll(".carousel_item"));
+   const itemActive = document.querySelector(".carousel_item__active");
+   const itemActiveIndex = itemsArray.indexOf(itemActive);
+   return itemActiveIndex;
+}
+
+function slideIndicator(toIndex) {
+   const dots = document.querySelectorAll(".carousel_dot");
+   const dotActive = document.querySelector(".carousel_dot__active");
+   const newDotActive = dots[toIndex];
+
+   dotActive.classList.remove("carousel_dot__active");
+   newDotActive.classList.add("carousel_dot__active");
+}
+   </script>
+	</body>
+</html>  

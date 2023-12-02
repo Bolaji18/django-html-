@@ -1,0 +1,189 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>Home2b Nigeria first home sharing site</title>
+		<link rel="stylesheet" href='{% static "style.css" %}' />
+		<style>
+body{
+	             background:url({% static 'bg-body.jpg' %}) repeat-x center top #09154F;
+	             margin: 0;
+                   }
+            #header ul #navigation li a#home .header ul#navigation li a#home{
+	            background: url({% static 'icons.gif' %}) no-repeat 0 -203px;
+	            text-indent: -99999px;
+	            display: block;
+	            width: 27px;
+	            height: 23px;
+                   }
+            #header ul#navigation li a#email,.header ul#navigation li a#email{
+	             text-indent: -99999px;
+	              background: url({% static 'icons.gif' %}) no-repeat 0 -256px;
+	              width: 33px;
+	              height: 23px;
+	              display: block;
+                    }
+            #header ul.navigation li,.header ul.navigation li{
+	          background: url({% static 'bg-menu.gif' %}) repeat-x;
+	           padding: 0 10px;
+               }
+            #header ul.navigation li.selected,.header ul.navigation li.selected{
+	         background: url({% static 'bg-menu-selected.gif' %}) repeat-x;
+	           padding: 0 10px;
+                  }
+
+.slider{
+ text-decoration: none;
+ font-family: sans-serif;
+ background-color: #e9edff;
+ border-radius: 20px;
+ padding-left:20px;
+ padding-right:20px;
+ padding:10px;
+ margin-top: 50px;
+ margin-bottom: 70px;
+ width:500px;
+ justify-items: center;
+ justify-content: center;
+ height: 200px;
+ box-sizing: content-box;
+ border: 2px solid #464953;
+margin-left:100px;
+float:left;
+}
+.slider img{
+ border-radius:2px;
+ width: 200px;
+ height: 200px;
+ float: left;
+ margin-right: 10px;
+}
+.text{
+	text-decoration: none;
+	font-family: 'Courier New', Courier, monospace;
+	list-style: none;
+	color: #464953;
+}
+.text a {
+	text-decoration: none;
+	color: #464953;
+
+	
+}
+:root{
+   font-family: sans-serif;
+   font-size: 16px;
+   font-weight: 400;
+}
+
+*{
+   margin: 0;
+   box-sizing: border-box;
+}
+
+		</style>
+	</head>
+	<body>
+		<div id="header">
+			<ul id="navigation">
+				
+					
+				
+				<li>
+					<a href="#" id="email">Email</a>
+				</li>
+			</ul>
+			 <p><a href="{{homeplace}}" id="home">{{ego}}</a></p>
+			  <p>{{ welcome }}</p>
+			  <p><a href="{{link}}" id="home">{{login}}</a></p>
+			<a href="#" id="logo"><img src="{% static 'log.jpg' %}" alt="log"/></a>
+		    <div id="featured">
+				<div class="first">
+					<ul>
+						<li class="selected first">
+							<div>
+								<a href="featured.html"><img src="{% static 'couples.jpg' %}" alt=""/></a>
+								<p>create your own hotel, add your apartment to our catalogue and earn more money. </p></div>
+						</li>
+						<li>
+							<div>
+								<a href="deals.html"><img src="{% static 'riverside.jpg' %}" alt=""/></a>
+
+							</div>
+						</li>
+						<li>
+							<div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div>
+					<h3>Find a location </h3>
+					<form action="">
+
+						<select name="" id="">
+							<option value="destinations">Lagos</option>
+							<option value="month">Abuja</option>
+							<option value="month">Ekiti</option>
+							<option value="month">Akure</option>
+							<option value="month">April</option>
+							<option value="month">May</option>
+							<option value="month">June</option>
+							<option value="month">July</option>
+							<option value="month">August</option>
+							<option value="month">September</option>
+							<option value="month">October</option>
+							<option value="month">November</option>
+							<option value="month">December</option>
+						</select>
+
+						<input type="submit" value=""/>
+					</form>
+					<div>
+						<h3>Already Booked?</h3>
+						<ul>
+							<li>
+								<a href="excursions.html">Check out our items at discount</a>
+								<p>Check our items listed for trade by barter and auction in a simple fast and user friendly interface.</p>
+							</li>
+							<li>
+								<a href="restaurant.html">Check out our Specialty Restaurant</a>
+								<p>Buy and sell landed properties at a fair price</p>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		 <h2>Ads</h2>
+		{% for x in Users%}
+		<div class="slider" >
+
+
+         <!-- Image slider start -->
+
+
+           <img src="{{x.image1.url}}" alt="" class="carousel_img">
+                 <div class="text">
+						<a href="ads/{{x.id}}"><p><h3>Title: {{x.title}}</h3></p>
+						<p>Description: {{x.content}}</p>
+						<p>address: {{x.address}}</p>
+							<p>Price: {{x.price}}</p></a>
+				</div>
+		</div>
+
+
+
+
+	{% endfor %}
+
+	
+				<p>&#169; Copyright 2012. All Rights Reserved.</p>
+			</div>
+		</div>
+	</body>
+</html>  

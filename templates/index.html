@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <style media="screen">
+
+
+
+body {
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+.container {
+  margin: auto;
+  margin-top: 150px;
+  width: 650px;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+h1 {
+  color: #333;
+}
+
+label {
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+  color: #333;
+}
+input[type="number"],
+input[type="email"],
+input[type="text"],
+input[type="password"] {
+  padding: 10px;
+  width: 90%;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="submit"],
+ #submit{
+  background-color: #008CBA;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#submit:hover {
+  background-color: #006F8E;
+}
+
+
+
+
+   
+    </style>
+  </head>
+  <body >
+
+  {% if error_message %}
+  <p>{{ error_message }}</p>
+  {% endif %}
+  <div class="container">
+    <h1>Create a new profile</h1>
+    <form class="" action="addrecord/" method="post">
+      {%csrf_token %}
+
+    <ul>
+        <label for="username">Username:</label>
+        <input type="text" name="username" >
+      
+        <label for="username">Password:</label>
+       <input type="text" name="password" >
+      <input type="submit" value="Login">
+    </ul>
+      </form>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,115 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<!-- Website template by freewebsitetemplates.com -->
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>Cruise Vacation</title>
+		<link rel="stylesheet" href='{% static "style.css" %}' />
+		<style>
+			label {
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+  color: #333;
+}
+input[type="number"],
+input[type="email"],
+input[type="text"],
+input[type="password"]
+{
+  padding: 10px;
+  width: 50%;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #0f0e0e;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-radius: 5px;
+  background-color: #bec2c4;
+  color: #0f0e0e
+}
+
+input[type="submit"],
+ #submit{
+  background-color: #0f1213;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10%;
+  margin-top: 20px;
+}
+
+#submit:hover {
+  background-color: #006F8E;
+}
+
+.content{
+	border: 1px #bec2c4 solid;
+	border-radius: 10px;
+	background-color: #bec2c4;
+	margin-top: 100px;
+	width: 100%;
+	height: auto;
+	justify-content: left;
+	padding: 20px;
+	padding-right: 30px;
+}
+.content form {
+	background-color: #bec2c4;
+}
+#blog{
+	background-color: #bec2c4;
+}
+#footer{
+	margin-top: 50px;
+}
+
+		</style>
+	</head>
+	<body>
+		<div class="header">
+			<ul id="navigation">
+				<li>
+					<a href="index.html" id="home">Home</a>
+				</li>
+				<li>
+					<a href="#" id="email">Email</a>
+				</li>
+			</ul>
+
+		<div class="content">
+				<h2>{{life}}</h2>
+
+				 <form method="POST">
+				     {%csrf_token %}
+					 {{ register_form }}
+
+					  <input type="submit" value="{{life}}">
+
+				 </form>
+				<a href="{{create}}">{{used}}</a>
+
+		</div>
+		<div id="footer" style="margin-top: 20%;">
+			<div>
+				<ul>
+					<li><a href="about.html">The Company</a></li>
+					<li><a href="blog.html">Visit our Blog</a></li>
+					<li><a href="#">Brochure download</a></li>
+				</ul>
+			
+				<form action="">
+					<span>Always Get Updated for latest offers </span>
+					<input type="text" value="Enter email address" id="email" onblur="this.value=!this.value?'Enter email address':this.value;" onfocus="this.select()" onclick="this.value='';" />
+					<input type="submit" id="submit" value=""/>
+				</form>
+				<p>&#169; Copyright 2012. All Rights Reserved.</p>
+			</div>
+		</div>
+	</body>
+</html>

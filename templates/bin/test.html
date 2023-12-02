@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/brython@3.8.9/brython.min.js" ></script>
+    <title></title>
+  </head>
+  <body onload="brython()">
+    <script type="text/python">
+      from browser import document
+      document<="hello world"
+      def hello(ev):
+        alert("Hello !")
+
+      document["button_alert"].bind("click", hello)
+    </script>
+  </body>
+</html>

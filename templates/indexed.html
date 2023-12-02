@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Example Website</title>
+    <style>
+    * {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Basic styles */
+body {
+	font-family: Arial, sans-serif;
+}
+
+nav ul {
+	list-style: none;
+	background-color: #333;
+	text-align: center;
+}
+
+nav ul li {
+	display: inline-block;
+	position: relative;
+	line-height: 1.8;
+}
+
+nav ul li a {
+	display: block;
+	padding: 0 10px;
+	color: #fff;
+	font-size: 16px;
+	text-decoration: none;
+}
+
+nav ul li:hover {
+	background-color: #444;
+}
+
+nav ul ul {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	background-color: #444;
+	padding: 0;
+}
+
+nav ul ul li 
+
+
+    </style>
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li>
+					<a href="#">Dropdown</a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Item 1</a></li>
+						<li><a href="#">Item 2</a></li>
+						<li><a href="#">Item 3</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+	
+	<main>
+		<section>
+			<h1>Welcome to my website</h1>
+			<p>This is an example website with a drop-down menu and containers that transition once hovered.</p>
+		</section>
+		
+		<section class="container">
+			<h2>Container 1</h2>
+			<p>This is the first container.</p>
+		</section>
+		
+		<section class="container">
+			<h2>Container 2</h2>
+			<p>This is the second container.</p>
+		</section>
+		
+		<section class="container">
+			<h2>Container 3</h2>
+			<p>This is the third container.</p>
+		</section>
+	</main>
+</body>
+</html>
