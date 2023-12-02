@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+
+   <style>
+
+body {
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+.container {
+  margin: auto;
+  margin-top: 100px;
+  width: 950px;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+h1 {
+  color: #333;
+}
+
+label {
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+  color: #333;
+}
+input[type="number"],
+input[type="email"],
+input[type="text"],
+input[type="password"] {
+  padding: 10px;
+  width: 90%;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="submit"],
+ #submit {
+  background-color: #008CBA;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#submit:hover {
+  background-color: #006F8E;
+}
+
+
+
+
+    </style>
+</head>
+<body>
+
+<form class="" action="accessanswer/" method="post">
+   {%csrf_token %}
+
+  <ul>
+
+      <input type="text" name="firstname" placeholder="Search a location">
+    <button id="submit" type="enter" name="enter">search</button>
+  </ul>
+    </form>
+
+
+ <h1>Members</h1>
+
+<table border="1">
+
+ <div class="container">
+  {% for x in myinfos%}
+
+<tr>
+  <td><a href="update/{{x.id}}">{{x.title}}</a></td>
+  <td>{{x.content}}</td>
+  <td>{{x.address}}</td>
+    <td>{{x.price}}</td>
+</tr>
+{% endfor %}
+      <div class="container">
+</table>
+<p>
+<a href="index/">Add member</a>
+</p>
+     <p><a href="newcontent/">create a new content</a></p>
+
+</body>
+</html>
